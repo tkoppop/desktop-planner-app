@@ -24,9 +24,7 @@ As a user, I want to be able to remove tasks to my todo-list
 
 As a user, I want to be able to sort my tasks based on urgency
 
-As a user, I want to see a schedule of the day based on my tasks
-
-As a user, I want to be able to see what tasks are due in a monthly calender
+As a user, I want to see a todo list with the task I entered
 
 As a user, I want my program to tell me when I tried to make an overlapping task
 

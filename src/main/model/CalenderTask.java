@@ -30,30 +30,37 @@ public class CalenderTask {
         return day;
     }
 
+    //EFFECTS: returns the month of the task
     public String getMonth() {
         return month;
     }
 
+    //EFFECTS: returns the year of the task
     public int getYear() {
         return year;
     }
 
+    //EFFECTS: returns the start of the task
     public int getStart() {
         return start;
     }
 
+    //EFFECTS: returns the finish of the task
     public int getFinish() {
         return finish;
     }
 
+    //EFFECTS: returns the name of the task
     public String getName() {
         return name;
     }
 
+    //EFFECTS: returns the description of the task
     public String getDescription() {
         return description;
     }
 
+    //EFFECTS: returns the urgency of the task
     public int getUrgency() {
         return urgency;
     }

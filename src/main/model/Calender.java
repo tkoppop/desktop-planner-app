@@ -31,10 +31,11 @@ public class Calender {
         }
     }
 
-    //EFFECTS: returns true if the task name is found in calender and removed. Otherwise, return false.
-    public boolean removeCalenderTask(String name) {
+    //REQUIRES: all task descriptions to be unique.
+    //EFFECTS: returns true if the task name, and description is found in calender and removed. Otherwise, return false.
+    public boolean removeCalenderTask(String name, String description) {
         for (int i = 0; i < ct.size(); i++) {
-            if (name == ct.get(i).getName()) {
+            if (name.equals(ct.get(i).getName()) && description.equals(ct.get(i).getDescription())) {
                 ct.remove(i);
                 return true;
             }
@@ -49,17 +50,19 @@ public class Calender {
             if (sameDay(calTask)
                     && ((calTask.getStart() < ct.get(x).getStart() && calTask.getFinish() > ct.get(x).getFinish())
                     || (calTask.getStart() > ct.get(x).getStart() && calTask.getStart() < ct.get(x).getFinish())
-                    || (calTask.getFinish() > ct.get(x).getStart() && calTask.getFinish() < ct.get(x).getFinish()))) {
+                    || (calTask.getFinish() > ct.get(x).getStart() && calTask.getFinish() < ct.get(x).getFinish())
+                    || (calTask.getFinish() == ct.get(x).getFinish() && calTask.getStart() == ct.get(x).getStart()))) {
                 return true;
             }
         }
         return false;
     }
 
+    //EFFECTS: returns true if the date of a task is the same as something in the calender.
     public boolean sameDay(CalenderTask calenTask) {
         for (int x = 0; x < ct.size(); x++) {
             if ((calenTask.getYear() == ct.get(x).getYear())
-                    && (calenTask.getMonth() == ct.get(x).getMonth())
+                    && (calenTask.getMonth().equals(ct.get(x).getMonth()))
                     && (calenTask.getDay() == ct.get(x).getDay())) {
                 return true;
             }
@@ -72,13 +75,16 @@ public class Calender {
         return ct.size();
     }
 
+    //EFFECT: prints the todo list to a string
     public String toString() {
         printOut = "";
         for (int k = 0; k < ct.size(); k++) {
             if (printOut == "") {
-                printOut = ct.get(k).getName() + " " + ct.get(k).getDescription();
+                printOut = "On " + ct.get(k).getMonth() + " " + ct.get(k).getDay() + ", " + ct.get(k).getYear() + " , "
+                        + ct.get(k).getName() + " is due." + ct.get(k).getDescription();
             } else {
-                printOut = printOut + "\n" + ct.get(k).getName() + " " + ct.get(k).getDescription();
+                printOut = printOut + "\n" + "On " + ct.get(k).getMonth() + " " + ct.get(k).getDay() + ", "
+                        + ct.get(k).getYear() + " , " + ct.get(k).getName() + " is due." + ct.get(k).getDescription();
             }
         }
         return printOut;
