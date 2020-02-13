@@ -81,12 +81,16 @@ public class Calender {
         for (int k = 0; k < ct.size(); k++) {
             if (printOut == "") {
                 printOut = "On " + ct.get(k).getMonth() + " " + ct.get(k).getDay() + ", " + ct.get(k).getYear() + " , "
-                        + ct.get(k).getName() + " is due." + ct.get(k).getDescription();
+                        + ct.get(k).getName() + " is due." + ct.get(k).getDescription()
+                        + ". " + ct.get(k).toStringUrgency();
             } else {
                 printOut = printOut + "\n" + "On " + ct.get(k).getMonth() + " " + ct.get(k).getDay() + ", "
-                        + ct.get(k).getYear() + " , " + ct.get(k).getName() + " is due." + ct.get(k).getDescription();
+                        + ct.get(k).getYear() + " , " + ct.get(k).getName() + " is due." + ct.get(k).getDescription()
+                        + ". " + ct.get(k).toStringUrgency();
             }
         }
         return printOut;
     }
+
+
 }

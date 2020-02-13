@@ -16,24 +16,16 @@ public class Main {
         for (int start = 0; start < 1; start--) {
             System.out.println("Welcome to your planner");
             System.out.println("Currently your planner is empty");
-            System.out.println("Do you want to add a task?");
-            System.out.println("y - Yes");
-            System.out.println("n - No");
+            System.out.println("Press Enter to continue");
             String choice1 = sc.nextLine();
-            if (choice1.equals("y") || choice1.equals("Y")) {
-                Boolean success = cal.addCalenderTask(userInputCalTask());
-                if (success == true) {
-                    System.out.println("Added");
-                    mainMenu();
+            Boolean success = cal.addCalenderTask(userInputCalTask());
+            if (success == true) {
+                System.out.println("Added");
+                mainMenu();
 
-                } else {
-                    System.out.println("You have an overlapping task");
-                }
             } else {
-                System.out.println("Exiting ...");
-                System.exit(0);
+                System.out.println("You have an overlapping task");
             }
-
         }
     }
 
@@ -81,7 +73,7 @@ public class Main {
         temp = sc.nextLine();
         System.out.println("Enter the description of the task you would like to remove");
         temp1 = sc.nextLine();
-        done = cal.removeCalenderTask(temp,temp1);
+        done = cal.removeCalenderTask(temp, temp1);
         if (done) {
             System.out.println("removed");
         } else {

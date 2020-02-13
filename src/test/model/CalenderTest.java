@@ -47,8 +47,8 @@ public class CalenderTest {
         assertEquals(3, c.getSize());
         assertTrue(c.removeCalenderTask("Math", "Math homework"));
         assertEquals(2, c.getSize());
-        assertEquals("On February 1, 2020 , Physics is due.Physics homework\n" +
-                "On March 2, 2021 , Biology is due.Biology homework", c.toString());
+        assertEquals("On February 1, 2020 , Physics is due.Physics homework. Urgent\n" +
+                "On March 2, 2021 , Biology is due.Biology homework. Urgent", c.toString());
 
     }
 
@@ -60,9 +60,9 @@ public class CalenderTest {
         assertEquals(3,c.getSize());
         assertFalse(c.addCalenderTask(ct2));
         assertEquals(3, c.getSize());
-        assertEquals("On February 1, 2020 , Physics is due.Physics homework\n" +
-                "On March 2, 2021 , Biology is due.Biology homework\n" +
-                "On January 1, 2020 , Math is due.Math homework", c.toString());
+        assertEquals("On February 1, 2020 , Physics is due.Physics homework. Urgent\n" +
+                "On March 2, 2021 , Biology is due.Biology homework. Urgent\n" +
+                "On January 1, 2020 , Math is due.Math homework. Not Urgent", c.toString());
         assertFalse(c.removeCalenderTask("English" , "English homework"));
         assertTrue(c.removeCalenderTask("Math", "Math homework"));
         assertEquals(2,c.getSize());

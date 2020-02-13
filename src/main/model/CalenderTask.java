@@ -65,4 +65,14 @@ public class CalenderTask {
         return urgency;
     }
 
+    //EFFECTS: returns urgent if urgency is 1, and normal urgency if urgency is 0
+    public String toStringUrgency() {
+        if (getUrgency() == 1) {
+            return "Urgent";
+        } else {
+            return "Not Urgent";
+        }
+    }
+
+
 }
