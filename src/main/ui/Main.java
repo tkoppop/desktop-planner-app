@@ -14,25 +14,6 @@ public class Main {
 
     public static void main(String[] args) {
         for (int start = 0; start < 1; start--) {
-            System.out.println("Welcome to your planner");
-            System.out.println("Currently your planner is empty");
-            System.out.println("Press Enter to continue");
-            String choice1 = sc.nextLine();
-            Boolean success = cal.addCalenderTask(userInputCalTask());
-            if (success == true) {
-                System.out.println("Added");
-                mainMenu();
-
-            } else {
-                System.out.println("You have an overlapping task");
-            }
-        }
-    }
-
-
-    public static void mainMenu() {
-
-        for (int main = 0; main < 1; main--) {
             System.out.println("You are at the main menu");
             System.out.println("1 - add another task");
             System.out.println("2 - remove a task");
@@ -40,7 +21,6 @@ public class Main {
             System.out.println("4 - exit");
             sc.nextLine();
             int choice = sc.nextInt();
-
             if (choice == 1) {
                 addTask();
             } else if (choice == 2) {
