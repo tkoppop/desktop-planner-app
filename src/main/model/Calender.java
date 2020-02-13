@@ -50,8 +50,7 @@ public class Calender {
             if (sameDay(calTask)
                     && ((calTask.getStart() < ct.get(x).getStart() && calTask.getFinish() > ct.get(x).getFinish())
                     || (calTask.getStart() > ct.get((x)).getStart() && calTask.getStart() < ct.get(x).getFinish())
-                    || (calTask.getFinish() > ct.get(x).getStart() && calTask.getFinish() < ct.get(x).getFinish())
-            )) {
+                    || (calTask.getFinish() > ct.get(x).getStart() && calTask.getFinish() < ct.get(x).getFinish()))) {
                 return true;
             }
         }
