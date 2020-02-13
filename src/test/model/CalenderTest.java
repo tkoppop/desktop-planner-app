@@ -16,6 +16,7 @@ public class CalenderTest {
     CalenderTask ct7;
     CalenderTask ct8;
     CalenderTask ct9;
+    CalenderTask ct10;
 
 
     @BeforeEach
@@ -39,6 +40,8 @@ public class CalenderTest {
                 0200, "Math", "Math homework" , 0);
         ct9 = new CalenderTask(7, "January", 2020, 0100,
                 0200, "Math", "Math homework" , 0);
+        ct10 = new CalenderTask(1, "January", 2020, 0130,
+                0145, "Math", "Math homework" , 0);
     }
 
     @Test
@@ -90,6 +93,7 @@ public class CalenderTest {
         assertFalse(c.addCalenderTask(ct7));
         assertFalse(c.addCalenderTask(ct8));
         assertTrue(c.addCalenderTask(ct9));
+        assertFalse(c.addCalenderTask(ct10));
 
 
     }
