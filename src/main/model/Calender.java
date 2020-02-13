@@ -48,9 +48,12 @@ public class Calender {
     public boolean overlap(CalenderTask calTask) {
         for (int x = 0; x < ct.size(); x++) {
             if (sameDay(calTask)
-                    && ((calTask.getStart() < ct.get(x).getStart() && calTask.getFinish() > ct.get(x).getFinish())
-                    || (calTask.getStart() > ct.get((x)).getStart() && calTask.getStart() < ct.get(x).getFinish())
-                    || (calTask.getFinish() > ct.get(x).getStart() && calTask.getFinish() < ct.get(x).getFinish()))) {
+                    && (((calTask.getStart() < ct.get(x).getStart())
+                    && (calTask.getFinish() > ct.get(x).getFinish()))
+                    || ((calTask.getStart() > ct.get((x)).getStart())
+                    && (calTask.getStart() < ct.get(x).getFinish()))
+                    || ((calTask.getFinish() > ct.get(x).getStart())
+                    && (calTask.getFinish() < ct.get(x).getFinish())))) {
                 return true;
             }
         }

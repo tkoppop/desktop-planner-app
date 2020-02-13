@@ -17,31 +17,34 @@ public class CalenderTest {
     CalenderTask ct8;
     CalenderTask ct9;
     CalenderTask ct10;
+    CalenderTask ct11;
 
 
     @BeforeEach
     void runBefore() {
         c = new Calender();
-        ct1 = new CalenderTask(1, "January", 2020, 0100,
-                0200, "Math", "Math homework", 0);
-        ct2 = new CalenderTask(1, "January", 2020, 0130,
-                0230, "English", "English homework", 0);
-        ct3 = new CalenderTask(2, "March", 2021, 0130,
-                0230, "Biology", "Biology homework", 1);
-        ct4 = new CalenderTask(1, "February", 2020, 0130,
-                0230, "Physics", "Physics homework", 1);
+        ct1 = new CalenderTask(1, "January", 2020, 100,
+                200, "Math", "Math homework", 0);
+        ct2 = new CalenderTask(1, "January", 2020, 130,
+                230, "English", "English homework", 0);
+        ct3 = new CalenderTask(2, "March", 2021, 130,
+                230, "Biology", "Biology homework", 1);
+        ct4 = new CalenderTask(1, "February", 2020, 130,
+                230, "Physics", "Physics homework", 1);
         ct5 = new CalenderTask(1, "January", 2020, 0,
                 2400, "Math", "Math homework", 0);
-        ct6 = new CalenderTask(1, "January", 2020, 0130,
+        ct6 = new CalenderTask(1, "January", 2020, 130,
                 500, "Math", "Math homework", 0);
         ct7 = new CalenderTask(1, "January", 2020, 0,
-                0130, "Math", "Math homework", 0);
-        ct8 = new CalenderTask(1, "January", 2020, 0100,
-                0200, "Math", "Math homework", 0);
-        ct9 = new CalenderTask(7, "January", 2020, 0100,
-                0200, "Math", "Math homework", 0);
-        ct10 = new CalenderTask(1, "January", 2020, 0130,
-                0145, "Math", "Math homework", 0);
+                130, "Math", "Math homework", 0);
+        ct8 = new CalenderTask(1, "January", 2020, 100,
+                200, "Math", "Math homework", 0);
+        ct9 = new CalenderTask(7, "January", 2020, 100,
+                200, "Math", "Math homework", 0);
+        ct10 = new CalenderTask(1, "January", 2020, 130,
+                145, "Math", "Math homework", 0);
+        ct11 = new CalenderTask(1, "January", 2020, 130,
+                145, "Jan", "Math homework", 0);
     }
 
     @Test
@@ -68,6 +71,8 @@ public class CalenderTest {
         assertEquals(2, c.getSize());
         assertEquals("On February 1, 2020 , Physics is due.Physics homework. Urgent\n" +
                 "On March 2, 2021 , Biology is due.Biology homework. Urgent", c.toString());
+        assertTrue(c.addCalenderTask(ct1));
+        assertFalse(c.addCalenderTask(ct11));
 
     }
 
