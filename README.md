@@ -28,3 +28,8 @@ As a user, I want to see a todo list with the task I entered
 
 As a user, I want my program to tell me when I tried to make an overlapping task
 
+As a user, I want to be able to save my todo list
+
+As a user, I want to be able to load my todo list from last session
+
+
