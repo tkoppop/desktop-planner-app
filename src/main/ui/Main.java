@@ -2,15 +2,19 @@ package ui;
 
 import model.*;
 
+import java.io.*;
 import java.util.*;
 
 public class Main {
 
+    public static final String CALENDER_FILE = "./data/calender.txt";
     public static Scanner sc = new Scanner(System.in);
     public static Calender cal = new Calender();
-    public static Boolean done;
+    public static Boolean done = false;
     public static String temp;
     public static String temp1;
+    public static PrintWriter printWriter;
+    public static Writer writer;
 
     public static void main(String[] args) {
         for (int start = 0; start < 1; start--) {
@@ -18,8 +22,7 @@ public class Main {
             System.out.println("1 - add another task");
             System.out.println("2 - remove a task");
             System.out.println("3 - view todo list");
-            System.out.println("4 - exit");
-            sc.nextLine();
+            System.out.println("4 - save and exit");
             int choice = sc.nextInt();
             if (choice == 1) {
                 addTask();
@@ -28,7 +31,9 @@ public class Main {
             } else if (choice == 3) {
                 System.out.println("My todo list");
                 System.out.println(cal.toString());
-            } else {
+            } else if (choice == 4) {
+                System.out.println("Saving...");
+                saveCalender();
                 System.out.println("exiting");
                 System.exit(0);
             }
@@ -39,7 +44,7 @@ public class Main {
         do {
             sc.nextLine();
             done = cal.addCalenderTask(userInputCalTask());
-            if (done == false) {
+            if (!done) {
                 System.out.println("You have an overlapping task");
             } else {
                 System.out.println("Added");
@@ -63,7 +68,6 @@ public class Main {
     }
 
     public static CalenderTask userInputCalTask() {
-
         System.out.println("Please enter the month of the due date");
         String month = sc.nextLine();
         System.out.println("Please enter the day of the due date");
@@ -88,5 +92,25 @@ public class Main {
                 finish, name, description, urgency);
     }
 
+    public static void saveCalender() {
+        try {
+            persistence.Writer writer = new persistence.Writer(new File(CALENDER_FILE));
+            persistence.Writer.write(cal);
+            persistence.Writer.close();
+            System.out.println("Accounts saved to file " + CALENDER_FILE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to save accounts to " + CALENDER_FILE);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            // this is due to a programming error
+        }
+    }
+
+    public static Calender arrayListToCalender(ArrayList al) {
+        for (int z = 0; z < al.size(); z++) {
+            cal.addCalenderTask((CalenderTask) al.get(z));
+        }
+        return cal;
+    }
 }
 

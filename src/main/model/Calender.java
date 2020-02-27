@@ -1,8 +1,13 @@
 package model;
 
+import persistence.Reader;
+import persistence.Saveable;
+import sun.util.resources.cldr.aa.CalendarData_aa_ER;
+
+import java.io.PrintWriter;
 import java.util.*;
 
-public class Calender {
+public class Calender implements Saveable {
 
     ArrayList<CalenderTask> ct;
     String printOut;
@@ -21,12 +26,14 @@ public class Calender {
         } else {
             if (overlap(calTask)) {
                 return false;
-            } else if (calTask.getUrgency() == 1) {
-                ct.add(0, calTask);
-                return true;
             } else {
-                ct.add(calTask);
-                return true;
+                if (calTask.getUrgency() == 1) {
+                    ct.add(0, calTask);
+                    return true;
+                } else {
+                    ct.add(calTask);
+                    return true;
+                }
             }
         }
     }
@@ -53,7 +60,9 @@ public class Calender {
                     || ((calTask.getStart() > ct.get((x)).getStart())
                     && (calTask.getStart() < ct.get(x).getFinish()))
                     || ((calTask.getFinish() > ct.get(x).getStart())
-                    && (calTask.getFinish() < ct.get(x).getFinish())))) {
+                    && (calTask.getFinish() < ct.get(x).getFinish()))
+                    || ((calTask.getStart() == ct.get(x).getStart())
+                    && (calTask.getFinish() == ct.get(x).getFinish())))) {
                 return true;
             }
         }
@@ -92,6 +101,32 @@ public class Calender {
             }
         }
         return printOut;
+    }
+
+    @Override
+    public void save(PrintWriter printWriter) {
+        for (int i = 0; i < ct.size(); i++) {
+            printWriter.print(ct.get(i).getDay());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getMonth());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getYear());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getStart());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getFinish());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getName());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.print(ct.get(i).getDescription());
+            printWriter.print(Reader.DELIMITER);
+            printWriter.println(ct.get(i).getUrgency());
+        }
+    }
+
+    //EFFECTS gets a specific element of the calender with the index i
+    public CalenderTask get(int i) {
+        return ct.get(i);
     }
 
 
