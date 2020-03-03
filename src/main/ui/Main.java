@@ -5,6 +5,8 @@ import model.*;
 import java.io.*;
 import java.util.*;
 
+import static persistence.Reader.readCalenderTask;
+
 public class Main {
 
     public static final String CALENDER_FILE = "./data/calender.txt";
@@ -15,6 +17,7 @@ public class Main {
     public static String temp1;
     public static PrintWriter printWriter;
     public static Writer writer;
+    public static ArrayList<CalenderTask> tempCal = new ArrayList<>();
 
     public static void main(String[] args) {
         for (int start = 0; start < 1; start--) {
@@ -23,6 +26,7 @@ public class Main {
             System.out.println("2 - remove a task");
             System.out.println("3 - view todo list");
             System.out.println("4 - save and exit");
+            System.out.println("5 - load a file");
             int choice = sc.nextInt();
             if (choice == 1) {
                 addTask();
@@ -36,6 +40,10 @@ public class Main {
                 saveCalender();
                 System.out.println("exiting");
                 System.exit(0);
+            } else if (choice == 5) {
+                loadCalender();
+                cal = arrayListToCalender(tempCal);
+
             }
         }
     }
@@ -111,6 +119,16 @@ public class Main {
             cal.addCalenderTask((CalenderTask) al.get(z));
         }
         return cal;
+    }
+
+    public static ArrayList loadCalender() {
+        try {
+            tempCal = readCalenderTask(new File(CALENDER_FILE));
+            return tempCal;
+        } catch (IOException e) {
+            System.out.print("this should not happen");
+            return null;
+        }
     }
 }
 
