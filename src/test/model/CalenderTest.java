@@ -58,10 +58,14 @@ public class CalenderTest {
         assertEquals(3, c.getSize());
         assertTrue(c.removeCalenderTask("Math"));
         assertEquals(2, c.getSize());
+        assertEquals(2, c.size());
+        assertEquals(ct4, c.get(0));
         assertEquals("On February 1, 2020 , Physics is due.Urgent\n" +
                 "On March 2, 2021 , Biology is due.Urgent", c.toString());
         c.addCalenderTask(ct1);
         c.addCalenderTask(ct11);
+        assertEquals("Not Urgent", ct2.toStringUrgency());
+        assertEquals("Urgent", ct3.toStringUrgency());
 
     }
 
