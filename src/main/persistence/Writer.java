@@ -23,7 +23,6 @@ public class Writer {
 
     // MODIFIES: this
     // EFFECTS: close print writer
-    // NOTE: you MUST call this method when you are done writing data!
     public static void close() {
         printWriter.close();
     }

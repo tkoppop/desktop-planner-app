@@ -24,12 +24,8 @@ public class ReaderTest {
             assertEquals(4, ct.getDay());
             assertEquals("Feb", ct.getMonth());
             assertEquals(2020, ct.getYear());
-            assertEquals(430, ct.getStart());
-            assertEquals(630, ct.getFinish());
             assertEquals("English", ct.getName());
-            assertEquals("Essay 2", ct.getDescription());
             assertEquals(1, ct.getUrgency());
-
         } catch (IOException e) {
             fail("IOException should not have been thrown");
         }
@@ -43,10 +39,7 @@ public class ReaderTest {
             assertEquals(5, ct.getDay());
             assertEquals("Jan", ct.getMonth());
             assertEquals(2020, ct.getYear());
-            assertEquals(730, ct.getStart());
-            assertEquals(830, ct.getFinish());
             assertEquals("Math", ct.getName());
-            assertEquals("Webwork", ct.getDescription());
             assertEquals(0, ct.getUrgency());
         } catch (IOException e) {
             fail("IOException should not have been thrown");

@@ -12,8 +12,7 @@ import java.util.List;
 public class Reader {
     public static final String DELIMITER = ",";
 
-    // EFFECTS: returns a list of accounts parsed from file; throws
-    // IOException if an exception is raised when opening / reading from file
+    // EFFECTS: returns a list of calendertasks parsed from file
     public static ArrayList readCalenderTask(File file) throws IOException {
         List<String> fileContent = readFile(file);
         return parseContent(fileContent);
@@ -26,7 +25,7 @@ public class Reader {
     }
 
     // EFFECTS: returns a list of accounts parsed from list of strings
-    // where each string contains data for one account
+    // where each string contains data for one calender task
     private static ArrayList parseContent(List<String> fileContent) {
         ArrayList ct = new ArrayList<>();
 
@@ -38,26 +37,20 @@ public class Reader {
         return ct;
     }
 
-    // EFFECTS: returns a list of strings obtained by splitting line on DELIMITER
-    private static ArrayList<String> splitString(String line) {
+    // EFFECTS: returns a list of strings obtained on the DELIMITER
+    public static ArrayList<String> splitString(String line) {
         String[] splits = line.split(DELIMITER);
         return new ArrayList<>(Arrays.asList(splits));
     }
 
-    // REQUIRES: components has size 4 where element 0 represents the
-    // id of the next account to be constructed, element 1 represents
-    // the id, elements 2 represents the name and element 3 represents
-    // the balance of the account to be constructed
-    // EFFECTS: returns an account constructed from components
-    private static CalenderTask parseCalenderTask(List<String> components) {
+    // REQUIRES: components has the size of 5 and is day month year name urgency
+    // EFFECTS: returns an calender Task constructed from components
+    public static CalenderTask parseCalenderTask(List<String> components) {
         int day = Integer.parseInt(components.get(0));
         String month = components.get(1);
         int year = Integer.parseInt(components.get(2));
-        int start = Integer.parseInt(components.get(3));
-        int finish = Integer.parseInt(components.get(4));
-        String name = components.get(5);
-        String description = components.get(6);
-        int urgency = Integer.parseInt(components.get(7));
-        return new CalenderTask(day, month, year, start, finish, name, description, urgency);
+        String name = components.get(3);
+        int urgency = Integer.parseInt(components.get(4));
+        return new CalenderTask(day, month, year, name, urgency);
     }
 }
