@@ -33,3 +33,18 @@ As a user, I want to be able to save my todo list
 As a user, I want to be able to load my todo list from last session
 
 
+You can generate the First Required Event by adding a task, and entering all the fields clicking the add task, then
+hitting submit. Go to View chooser and click todo list. Click refresh, and the task you made is there.
+
+You can generate the Second Required Event by removing a task. Highlight the entire todo list entry and hit finish. 
+This will remove the task from your list, and fullfilled the requirement.
+
+You can trigger my audio component by finishing and removing tasks from my list. IF you make a task, goto todo list and
+highlight and click finish. A audio queue will trigger, fullfilling requirement 3.
+
+you can generate the fourth requirement by adding a task, then clicking save at the bottom of view chooser. The file is 
+called calender.txt, and there willl be the saved file.
+
+you can generate the fifth requirement by previously saving a file, then click load file on the View chooser. Go to the
+todo list, and click refresh. You will see that your tasks have loaded. Thus, fullfilling the fifth requirement.
+

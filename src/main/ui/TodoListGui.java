@@ -25,19 +25,16 @@ public class TodoListGui {
     public static void todoList() {
         jf = new JFrame("Todo List");
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.getContentPane().setLayout(new BorderLayout());
         jf.setSize(350, 900);
         refresh = new JButton("Refresh");
         finishTask = new JButton("Finish");
-        display = new JTextArea(25, 90);
+        display = new JTextArea(25, 50);
         jf.getContentPane().add(display, BorderLayout.CENTER);
         jf.getContentPane().add(refresh, BorderLayout.PAGE_START);
         jf.getContentPane().add(finishTask, BorderLayout.PAGE_END);
         refresh.addActionListener(new TodoListGui.RefreshTodoList());
         finishTask.addActionListener(new TodoListGui.FinishTask());
-        JScrollPane areaScrollPane = new JScrollPane(display);
-        areaScrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        areaScrollPane.setPreferredSize(new Dimension(250, 250));
         jf.setVisible(true);
     }
 
@@ -68,7 +65,7 @@ public class TodoListGui {
     //EFFECTS: loads the calender tasks onto display
     public static void addTasks() {
         for (int x = 0; x < cal.size(); x++) {
-            display.setText(display + "\n" + cal.get(x).getName() + ", " + cal.get(x).getMonth() + ", "
+            display.append("\n" + cal.get(x).getName() + ", " + cal.get(x).getMonth() + ", "
                     + cal.get(x).getDay() + ", " + cal.get(x).getYear() + ", " + cal.get(x).toStringUrgency());
         }
     }
