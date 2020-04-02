@@ -2,6 +2,7 @@ package ui;
 
 import model.Calender;
 import model.CalenderTask;
+import model.TaskNotFoundException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -55,7 +56,11 @@ public class TodoListGui {
         public void actionPerformed(ActionEvent e) {
             ArrayList<String> temp = persistence.Reader.splitString(display.getSelectedText());
             display.setText(display.getText().replace(display.getSelectedText(), ""));
-            cal.removeCalenderTask(temp.get(0));
+            try {
+                cal.removeCalenderTask(temp.get(0));
+            } catch (TaskNotFoundException d) {
+                System.out.print("task not found");
+            }
             se.setFile("./data/finish.wav");
             se.play();
         }

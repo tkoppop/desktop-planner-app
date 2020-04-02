@@ -6,10 +6,13 @@ import persistence.Saveable;
 import java.io.PrintWriter;
 import java.util.*;
 
+
+//represents the calender of tasks.
 public class Calender implements Saveable {
 
     public static ArrayList<CalenderTask> ct;
     String printOut;
+
 
     public Calender() {
         ct = new ArrayList<>();
@@ -25,16 +28,15 @@ public class Calender implements Saveable {
         }
     }
 
-    //REQUIRES: all task descriptions to be unique.
     //EFFECTS: returns true if the task name, and description is found in calender and removed. Otherwise, return false.
-    public boolean removeCalenderTask(String name) {
+    public boolean removeCalenderTask(String name) throws TaskNotFoundException {
         for (int i = 0; i < ct.size(); i++) {
             if (name.equals(ct.get(i).getName())) {
                 ct.remove(i);
                 return true;
             }
         }
-        return false;
+        throw new TaskNotFoundException();
     }
 
     //EFFECTS: returns the size of the calender

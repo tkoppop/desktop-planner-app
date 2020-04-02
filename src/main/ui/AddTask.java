@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 import static ui.TodoListGui.cal;
 
-
+//the UI form to add task to Calender
 public class AddTask extends JFrame {
     static JPanel contentPane = new JPanel();
     static int day;
@@ -24,7 +24,7 @@ public class AddTask extends JFrame {
     static JTextField nameInput;
     static JTextField urgencyInput;
 
-//EFFECTS: launches the add task GUI
+    //EFFECTS: launches the add task GUI
     public static void addTasks() {
         try {
             frame = new AddTask();
@@ -68,7 +68,7 @@ public class AddTask extends JFrame {
 
     }
 
-//REQUIRES: submit task button is clicked
+    //REQUIRES: submit task button is clicked
     //MODIFIES: calender
     //EFFECTS: adds a calender task to calender who's fields are put in.
     static class SubmitTask implements ActionListener {

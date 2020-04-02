@@ -1,15 +1,12 @@
 package model;
 
-import java.util.*;
-
+//represents each task within Calender
 public class CalenderTask {
 
     int day;
     String month;
     int year;
-
     String name;
-
     int urgency;
 
 
@@ -17,7 +14,6 @@ public class CalenderTask {
         this.day = day;
         this.month = month;
         this.year = year;
-
         this.name = name;
         this.urgency = urgency;
     }
@@ -42,8 +38,6 @@ public class CalenderTask {
     public String getName() {
         return name;
     }
-
-
 
     //EFFECTS: returns the urgency of the task
     public int getUrgency() {

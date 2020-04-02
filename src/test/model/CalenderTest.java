@@ -39,24 +39,37 @@ public class CalenderTest {
     @Test
     void testConstructor() {
         assertEquals(0, c.getSize());
-        assertFalse(c.removeCalenderTask("English"));
+        try {
+            assertFalse(c.removeCalenderTask("English"));
+            fail();
+        } catch( TaskNotFoundException e) {
+          //success
+        }
     }
 
     @Test
     void testSingleTask() {
         c.addCalenderTask(ct1);
         assertEquals(1, c.getSize());
+        try {
         assertTrue(c.removeCalenderTask("Math"));
+        } catch( TaskNotFoundException e) {
+            fail();
+        }
         assertEquals(0, c.getSize());
     }
 
     @Test
-    void testAddMultiple() {
+    void testAddMultipleTask() {
         c.addCalenderTask(ct3);
         c.addCalenderTask(ct4);
         c.addCalenderTask(ct1);
         assertEquals(3, c.getSize());
+        try {
         assertTrue(c.removeCalenderTask("Math"));
+        } catch( TaskNotFoundException e) {
+            fail();
+        }
         assertEquals(2, c.getSize());
         assertEquals(2, c.size());
         assertEquals(ct4, c.get(0));
@@ -69,5 +82,25 @@ public class CalenderTest {
 
     }
 
-
+    @Test
+    void testAddMultipleTaskNotFound() {
+        c.addCalenderTask(ct3);
+        c.addCalenderTask(ct4);
+        assertEquals(2, c.getSize());
+        try {
+            assertFalse(c.removeCalenderTask("Math"));
+            fail();
+        } catch( TaskNotFoundException e) {
+            //Success!! Caught
+        }
+        assertEquals(2, c.getSize());
+        assertEquals(2, c.size());
+        assertEquals(ct4, c.get(0));
+        assertEquals("On February 1, 2020 , Physics is due.Urgent\n" +
+                "On March 2, 2021 , Biology is due.Urgent", c.toString());
+        c.addCalenderTask(ct1);
+        c.addCalenderTask(ct11);
+        assertEquals("Not Urgent", ct2.toStringUrgency());
+        assertEquals("Urgent", ct3.toStringUrgency());
+    }
 }

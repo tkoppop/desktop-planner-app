@@ -48,3 +48,19 @@ called calender.txt, and there willl be the saved file.
 you can generate the fifth requirement by previously saving a file, then click load file on the View chooser. Go to the
 todo list, and click refresh. You will see that your tasks have loaded. Thus, fullfilling the fifth requirement.
 
+##Phase 4: Task 2
+I have chosen to add robustness to my program, specifically the remove task method in my Calender Class. Originally, it 
+required that the task being removed was actually in the Calender, but now it throws a TaskNotFoundExpection if the task
+isn't found. The tests that were excepted and not excepted were added in the CalenderTest Class. Specifically, the 
+testAddMultiple was the test that doesn't expect the exception, and testAddMultipleTaskNotFound is the one that excepts
+it.
+
+##Phase 4: Task 3
+1. ViewChooser class was doing too many things. It was supposed to load UI to choose what the planner does, but It also
+Loaded and Saved Calenders. To fix this, I moved LoadCalender and SaveCalender into their own classes to increase 
+cohesion. 
+
+2. The View Chooser class was also my main function, which did almost everything in my program. This was fixed simply by
+a Main class, with a main function that launched viewChooser to increase Cohesion.
+
+3. 

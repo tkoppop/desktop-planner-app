@@ -1,31 +1,25 @@
 package ui;
 
-import model.Calender;
+
 import model.CalenderTask;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+
 import java.util.ArrayList;
 
-import static persistence.Reader.readCalenderTask;
+
 import static ui.AddTask.*;
 import static ui.CalenderView.*;
-import static ui.TodoListGui.CALENDER_FILE;
-import static ui.TodoListGui.arrayListToCalender;
-import static ui.TodoListGui.cal;
 
 public class ViewChooser {
 
     public static ArrayList<CalenderTask> tempCal = new ArrayList<>();
 
 
-    public static void main(String[] args) {
+    public static void viewChooser() {
 
         JFrame frame = new JFrame("ViewChooser");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,8 +38,8 @@ public class ViewChooser {
         cal.addActionListener(new ViewChooser.LaunchCalendar());
         todoList.addActionListener(new ViewChooser.LaunchTodoList());
         addTask.addActionListener(new ViewChooser.LaunchAddTask());
-        loadList.addActionListener(new ViewChooser.LoadCalender());
-        saveList.addActionListener(new ViewChooser.SaveCalender());
+        loadList.addActionListener(new LoadCalender());
+        saveList.addActionListener(new SaveCalender());
     }
 
     //REQUIRES: launchcalender button to be clicked
@@ -75,33 +69,7 @@ public class ViewChooser {
         }
     }
 
-   //MODIFIES: cal
-    //EFFECTS: loads in previous calender data
-    static class LoadCalender implements  ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            try {
-                tempCal = readCalenderTask(new File(CALENDER_FILE));
-                cal = arrayListToCalender(tempCal);
-            } catch (IOException d) {
-                System.out.print("this should not happen");
-            }
-        }
-    }
 
-    //MODIFIES: calender.txt
-    //EFFECTS: saves calender onto text file
-    static class SaveCalender implements  ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            try {
-                persistence.Writer writer = new persistence.Writer(new File(CALENDER_FILE));
-                persistence.Writer.write(cal);
-                persistence.Writer.close();
-                System.out.println("Calendar saved to file " + CALENDER_FILE);
-            } catch (FileNotFoundException d) {
-                System.out.println("Unable to save Calendar to " + CALENDER_FILE);
-            } catch (UnsupportedEncodingException d) {
-                d.printStackTrace();
-            }
-        }
-    }
+
+
 }
