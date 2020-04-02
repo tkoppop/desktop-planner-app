@@ -16,6 +16,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class ReaderTest {
     CalenderTask ct;
     Calender cal;
+
+    @Test
+    void testConstructor(){
+        new Reader();
+    }
     @Test
     void testParseCalenderFile1() {
         try {
