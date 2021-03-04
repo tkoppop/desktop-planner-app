@@ -63,3 +63,4 @@ cohesion.
 2. The View Chooser class was also my main function, which did almost everything in my program. This was fixed simply by
 a Main class, with a main function that launched viewChooser to increase Cohesion.
 
+
