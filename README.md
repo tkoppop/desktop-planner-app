@@ -54,9 +54,9 @@ testAddMultiple was the test that doesn't expect the exception, and testAddMulti
 it.
 
 ##Phase 4: Task 3
-1. ViewChooser class was doing too many things. It was supposed to load UI to choose what the planner does, but It also
+ViewChooser class was doing too many things. It was supposed to load UI to choose what the planner does, but It also
 Loaded and Saved Calenders. To fix this, I moved LoadCalender and SaveCalender into their own classes to increase 
 cohesion. 
 
-2. The View Chooser class was also my main function, which did almost everything in my program. This was fixed simply by
+The View Chooser class was also my main function, which did almost everything in my program. This was fixed simply by
 a Main class, with a main function that launched viewChooser to increase Cohesion.
