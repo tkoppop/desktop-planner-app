@@ -16,7 +16,6 @@ application that allows me to turn on monthly, weekly, daily, and a todo list vi
 customize those views at will. Additionally, most of these planners require payment to unlock full functionality, 
 I really want to make something simple and I can use. 
 
-
 #User Stories
 As a user, I want to be able to add tasks to my todo-list
 
@@ -31,7 +30,6 @@ As a user, I want to be able to have a quick way to access a Calendar.
 As a user, I want to be able to save my todo list
 
 As a user, I want to be able to load my todo list from last session
-
 
 You can generate the First Required Event by adding a task, and entering all the fields clicking the add task, then
 hitting submit. Go to View chooser and click todo list. Click refresh, and the task you made is there.
@@ -62,5 +60,3 @@ cohesion.
 
 2. The View Chooser class was also my main function, which did almost everything in my program. This was fixed simply by
 a Main class, with a main function that launched viewChooser to increase Cohesion.
-
-
