@@ -26,9 +26,8 @@ public class WriterTest {
     void testWrite() {
         try {
             cal.addCalenderTask(ct);
-            Writer w = new Writer(new File("./data/testCalender.txt"));
-            persistence.Writer.write(cal);
-            persistence.Writer.close();
+            Writer.write(cal);
+            Writer.close();
             List<CalenderTask> tempCal = Reader.readCalenderTask(new File("./data/testCalender.txt"));
             CalenderTask ct = tempCal.get(0);
             assertEquals(4, ct.getDay());
