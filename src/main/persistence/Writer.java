@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
-public class Writer {
+public class writer {
     private static PrintWriter printWriter;
 
     // EFFECTS: constructs a writer that will write data to file
