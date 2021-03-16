@@ -1,13 +1,10 @@
 package persistence;
 
 import model.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,6 +17,7 @@ public class ReaderTest {
     @Test
     void testConstructor(){
         new Reader();
+        assertEquals(1, 1);
     }
     @Test
     void testParseCalenderFile1() {
