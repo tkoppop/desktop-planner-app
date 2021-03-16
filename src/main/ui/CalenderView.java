@@ -10,24 +10,24 @@ import static ui.TodoListGui.cal;
 
 //Represents the Calender UI
 public class CalenderView {
-    static JTextArea numTasks;
-    static JLabel lblMonth;
-    static JLabel lblYear;
+    public static JTextArea numTasks;
+    public static JLabel lblMonth;
+    public static JLabel lblYear;
     private static JButton prevMonth;
-    static JButton nextMonth;
-    static JTable calenderTable;
+    public static JButton nextMonth;
+    public static JTable calenderTable;
     private static JComboBox cmbYear;
-    static JFrame frame;
-    static Container pane;
-    static DefaultTableModel calender; //Table model
-    static JScrollPane stblCalendar; //The scrollpane
+    public static JFrame frame;
+    public static Container pane;
+    public static DefaultTableModel calender; //Table model
+    public static JScrollPane stblCalendar; //The scrollpane
     private static JPanel pnlCalendar;
-    static int userYear;
-    static int userMonth;
-    static int userDay;
-    static int currentYear;
-    static int currentMonth;
-    static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
+    public static int userYear;
+    public static int userMonth;
+    public static int userDay;
+    public static int currentYear;
+    public static int currentMonth;
+    public static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
             "September", "October", "November", "December"};
 
     //EFFECTS: launches Calender GUI
