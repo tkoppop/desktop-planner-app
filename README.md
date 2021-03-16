@@ -1,5 +1,7 @@
 # My Personal Project
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b1837fe386764626a91f79640dd2743c)](https://app.codacy.com/gh/tkoppop/desktop-planner-app?utm_source=github.com&utm_medium=referral&utm_content=tkoppop/desktop-planner-app&utm_campaign=Badge_Grade_Settings)
+
 ## A quick overview
 
 The application so far will be a simple task planner with a monthly calender, a daily plan, and a todo list. 
