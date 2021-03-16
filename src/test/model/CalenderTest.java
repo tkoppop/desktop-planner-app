@@ -2,22 +2,20 @@ package model;
 
 import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class CalenderTest {
 
-    Calender c;
-    CalenderTask ct1;
-    CalenderTask ct2;
-    CalenderTask ct3;
-    CalenderTask ct4;
-    CalenderTask ct5;
-    CalenderTask ct6;
-    CalenderTask ct7;
-    CalenderTask ct8;
-    CalenderTask ct9;
-    CalenderTask ct10;
-    CalenderTask ct11;
+    private Calender c;
+    private CalenderTask ct1;
+    private CalenderTask ct2;
+    private CalenderTask ct3;
+    private CalenderTask ct4;
+    private CalenderTask ct5;
+    private CalenderTask ct6;
+    private CalenderTask ct7;
+    private CalenderTask ct8;
+    private CalenderTask ct9;
+    private CalenderTask ct10;
+    private CalenderTask ct11;
 
 
     @BeforeEach
