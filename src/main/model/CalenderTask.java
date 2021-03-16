@@ -3,11 +3,11 @@ package model;
 //represents each task within Calender
 public class CalenderTask {
 
-    int day;
-    String month;
-    private int year;
-    private String name;
-    int urgency;
+    public int day;
+    public String month;
+    public int year;
+    public String name;
+    public int urgency;
 
 
     public CalenderTask(int day, String month, int year, String name, int urgency) {
