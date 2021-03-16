@@ -13,15 +13,15 @@ public class CalenderView {
     static JTextArea numTasks;
     static JLabel lblMonth;
     static JLabel lblYear;
-    static JButton prevMonth;
+    private static JButton prevMonth;
     static JButton nextMonth;
     static JTable calenderTable;
-    static JComboBox cmbYear;
+    private static JComboBox cmbYear;
     static JFrame frame;
     static Container pane;
     static DefaultTableModel calender; //Table model
     static JScrollPane stblCalendar; //The scrollpane
-    static JPanel pnlCalendar;
+    private static JPanel pnlCalendar;
     static int userYear;
     static int userMonth;
     static int userDay;
@@ -84,11 +84,9 @@ public class CalenderView {
             super.getTableCellRendererComponent(table, value, selected, focused, row, column);
             setBackground(new Color(255, 255, 255));
 
-            if (value != null) {
-                if (Integer.parseInt(value.toString())
-                        == userDay && currentMonth == userMonth && currentYear == userYear) {
+            if (value != null && (Integer.parseInt(value.toString())
+                        == userDay && currentMonth == userMonth && currentYear == userYear)) { 
                     setBackground(new Color(220, 220, 255));
-                }
             }
             setBorder(null);
             setForeground(Color.black);
@@ -201,7 +199,7 @@ public class CalenderView {
     }
 
     //EFFECTS: sets the buttons so that they can't go too far back or forward in time
-    static void allowButtons(int month, int year) {
+    private static void allowButtons(int month, int year){
         prevMonth.setEnabled(true);
         nextMonth.setEnabled(true);
         if (month == 0 && year <= userYear - 10) {
