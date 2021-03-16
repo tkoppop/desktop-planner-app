@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/177eb89c17a3428e809f610548cee97e)](https://www.codacy.com/gh/tkoppop/Create-Jobs/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tkoppop/Create-Jobs&amp;utm_campaign=Badge_Grade)
 # My Personal Project
 
 ## A quick overview
