@@ -5,8 +5,8 @@ public class CalenderTask {
 
     int day;
     String month;
-    int year;
-    String name;
+    private int year;
+    private String name;
     int urgency;
 
 
