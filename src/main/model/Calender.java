@@ -11,8 +11,7 @@ import java.util.*;
 public class Calender implements Saveable {
 
     public static ArrayList<CalenderTask> ct;
-    String printOut;
-
+    public String printOut;
 
     public Calender() {
         ct = new ArrayList<>();
