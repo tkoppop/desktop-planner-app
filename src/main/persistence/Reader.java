@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Reader {
+public class reader {
     public static final String DELIMITER = ",";
 
     // EFFECTS: returns a list of calendertasks parsed from file
