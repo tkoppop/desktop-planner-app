@@ -9,18 +9,18 @@ import static ui.TodoListGui.cal;
 
 //the UI form to add task to Calender
 public class AddTask extends JFrame {
-    static JPanel contentPane = new JPanel();
-    static int day;
+    public static JPanel contentPane = new JPanel();
+    public static int day;
     private static String month;
-    static int year;
-    static AddTask frame;
-    static String name;
-    static int urgency;
-    static JTextField dayInput;
-    static JTextField monthInput;
-    static JTextField yearInput;
+    public static int year;
+    public static AddTask frame;
+    public static String name;
+    public static int urgency;
+    public static JTextField dayInput;
+    public static JTextField monthInput;
+    public static JTextField yearInput;
     private static JTextField nameInput;
-    static JTextField urgencyInput;
+    public static JTextField urgencyInput;
 
     //EFFECTS: launches the add task GUI
     public static void addTasks() {
