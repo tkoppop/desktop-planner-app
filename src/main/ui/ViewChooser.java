@@ -1,18 +1,11 @@
 package ui;
 
-
 import model.CalenderTask;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.util.ArrayList;
-
-
-import static ui.AddTask.*;
-import static ui.CalenderView.*;
 
 public class ViewChooser {
 
