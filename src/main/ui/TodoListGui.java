@@ -10,10 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import static ui.CalenderView.calenderView;
-
-
-public class TodoListGui {
+public class todoListGui {
     public static final String CALENDER_FILE = "./data/calender.txt";
     public static Calender cal = new Calender();
     public static JFrame jf;
