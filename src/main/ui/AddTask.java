@@ -13,7 +13,7 @@ import static ui.TodoListGui.cal;
 public class AddTask extends JFrame {
     static JPanel contentPane = new JPanel();
     static int day;
-    static String month;
+    private static String month;
     static int year;
     static AddTask frame;
     static String name;
@@ -21,7 +21,7 @@ public class AddTask extends JFrame {
     static JTextField dayInput;
     static JTextField monthInput;
     static JTextField yearInput;
-    static JTextField nameInput;
+    private static JTextField nameInput;
     static JTextField urgencyInput;
 
     //EFFECTS: launches the add task GUI
