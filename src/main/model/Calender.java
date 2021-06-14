@@ -1,22 +1,15 @@
 package model;
-
 import persistence.Reader;
 import persistence.Saveable;
-
 import java.io.PrintWriter;
 import java.util.*;
-
-
 //represents the calender of tasks.
 public class Calender implements Saveable {
-
     public static ArrayList<CalenderTask> ct;
     public String printOut;
-
     public Calender() {
         ct = new ArrayList<>();
     }
-
     //EFFECTS: adds the task into the calender and returns true if there is no overlap or calender is empty.
     // otherwise return false.
     public static void addCalenderTask(CalenderTask calTask) {
@@ -26,7 +19,6 @@ public class Calender implements Saveable {
             ct.add(calTask);
         }
     }
-
     //EFFECTS: returns true if the task name, and description is found in calender and removed. Otherwise, return false.
     public boolean removeCalenderTask(String name) throws TaskNotFoundException {
         for (int i = 0; i < ct.size(); i++) {
@@ -37,12 +29,10 @@ public class Calender implements Saveable {
         }
         throw new TaskNotFoundException();
     }
-
     //EFFECTS: returns the size of the calender
     public int getSize() {
         return ct.size();
     }
-
     //EFFECT: prints the todo list to a string
     public String toString() {
         printOut = "";
@@ -57,7 +47,6 @@ public class Calender implements Saveable {
         }
         return printOut;
     }
-
     //MODIFIES: calender.txt
     //EFFECTS: writes calender onto text file
     @Override
@@ -74,16 +63,12 @@ public class Calender implements Saveable {
             printWriter.println(ct.get(i).getUrgency());
         }
     }
-
     //EFFECTS gets a specific element of the calender with the index i
     public CalenderTask get(int i) {
         return ct.get(i);
     }
-
     //EFFECTS: gets the size of the calender
     public int size() {
         return ct.size();
     }
-
-
 }
