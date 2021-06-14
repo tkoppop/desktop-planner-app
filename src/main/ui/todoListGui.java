@@ -1,15 +1,12 @@
 package ui;
-
 import model.Calender;
 import model.CalenderTask;
 import model.TaskNotFoundException;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 public class todoListGui {
     public static final String CALENDER_FILE = "./data/calender.txt";
     public static Calender cal = new Calender();
@@ -18,7 +15,6 @@ public class todoListGui {
     public static JButton finishTask;
     public static JTextArea display;
     public static SoundEffect se = new SoundEffect();
-
     //EFFECTS: launches the todoList GUI
     public static void todoList() {
         jf = new JFrame("Todo List");
@@ -35,7 +31,6 @@ public class todoListGui {
         finishTask.addActionListener(new TodoListGui.FinishTask());
         jf.setVisible(true);
     }
-
     //REQUIRES refresh list button is hit
     //MODIFIES: display
     //EFFECTS: updates display if the user adds more calender tasks
@@ -45,7 +40,6 @@ public class todoListGui {
             addTasks();
         }
     }
-
     //REQUIRES: finish task button is hit
     //MODIFIES: display, cal
     //EFFECTS: removes selected Task, removes it from calender, and plays a sound
@@ -62,7 +56,6 @@ public class todoListGui {
             se.play();
         }
     }
-
     //MODIFIES: display
     //EFFECTS: loads the calender tasks onto display
     public static void addTasks() {
@@ -71,7 +64,6 @@ public class todoListGui {
                     + cal.get(x).getDay() + ", " + cal.get(x).getYear() + ", " + cal.get(x).toStringUrgency());
         }
     }
-
     //MODIFIES: al
     //EFFECTS: converts cal into arraylist<calenderTask>
     public static Calender arrayListToCalender(ArrayList al) {
@@ -80,5 +72,4 @@ public class todoListGui {
         }
         return cal;
     }
-
 }
