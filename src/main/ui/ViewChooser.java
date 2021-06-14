@@ -1,19 +1,13 @@
 package ui;
-
 import model.CalenderTask;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 public class ViewChooser {
-
     public static ArrayList<CalenderTask> tempCal = new ArrayList<>();
-
-
     public static void viewChooser() {
-
         JFrame frame = new JFrame("ViewChooser");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(350, 300);
@@ -34,7 +28,6 @@ public class ViewChooser {
         loadList.addActionListener(new LoadCalender());
         saveList.addActionListener(new SaveCalender());
     }
-
     //REQUIRES: launchcalender button to be clicked
     //MODIFIES: display
     //EFFECTS: launches the calender GUI
@@ -43,7 +36,6 @@ public class ViewChooser {
             calenderView();
         }
     }
-
     //REQUIRES: launchTodoList button to be clicked
     //MODIFIES: display
     //EFFECTS: launches the todolist GUI
@@ -52,7 +44,6 @@ public class ViewChooser {
             TodoListGui.todoList();
         }
     }
-
     //REQUIRES: addTask button to be clicked
     //MODIFIES: display
     //EFFECTS: launches the addTask GUI
@@ -61,8 +52,4 @@ public class ViewChooser {
             addTasks();
         }
     }
-
-
-
-
 }
