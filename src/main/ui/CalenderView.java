@@ -1,13 +1,10 @@
 package ui;
-
 import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-
 import static ui.TodoListGui.cal;
-
 //Represents the Calender UI
 public class CalenderView {
     public static JTextArea numTasks;
@@ -29,7 +26,6 @@ public class CalenderView {
     public static int currentMonth;
     public static String[] months = {"January", "February", "March", "April", "May", "June", "July", "August",
             "September", "October", "November", "December"};
-
     //EFFECTS: launches Calender GUI
     public static void calenderView() {
         initializeSize();
@@ -53,7 +49,6 @@ public class CalenderView {
         }
         refreshCalendar(userMonth, userYear);
     }
-
     //MODIFIES: calender, calenderTable
     //EFFFECTS: updates the calender and user dates
     public static void refreshCalendar(int month, int year) {
@@ -75,7 +70,6 @@ public class CalenderView {
         }
         calenderTable.setDefaultRenderer(calenderTable.getColumnClass(0), new CalenderRenderer());
     }
-
     //MODIFIES: frame
     //EFFECTS: draws the calender onto the frame.
     static class CalenderRenderer extends DefaultTableCellRenderer {
@@ -93,7 +87,6 @@ public class CalenderView {
             return this;
         }
     }
-
     //REQUIRES: prevmonth button to be pushed
     //MODIFIES: frame
     //EFFECTS: changes user view the the previous month
@@ -108,7 +101,6 @@ public class CalenderView {
             refreshCalendar(currentMonth, currentYear);
         }
     }
-
     //REQUIRES: next month button to be clicked
     //MMODIFIES: frame
     //EFFECTS: switches the frame to display the next month
@@ -123,7 +115,6 @@ public class CalenderView {
             refreshCalendar(currentMonth, currentYear);
         }
     }
-
     //REQUIRE: year selection to be clicked
     //MODIFIES: frame
     //EFFECTS: switches to the year user selected
@@ -136,7 +127,6 @@ public class CalenderView {
             }
         }
     }
-
     //MODIFIES: frame
     //EFFECTS: sets up the initial conidtions of the frame
     static void initializeSize() {
@@ -146,7 +136,6 @@ public class CalenderView {
         pane.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
     //MODIFIES: frame
     //EFFECTS: adds buttons onto the frame
     static void setControls() {
@@ -174,7 +163,6 @@ public class CalenderView {
         pnlCalendar.add(nextMonth);
         pnlCalendar.add(stblCalendar);
     }
-
     //MODIFIES: frame
     //EFFECTS: sets the borders of the calender
     static void setBorders() {
@@ -186,7 +174,6 @@ public class CalenderView {
         nextMonth.setBounds(520, 50, 100, 50);
         stblCalendar.setBounds(20, 100, 600, 500);
     }
-
     //MODIFIES: userday, usermonth, useryear
     //EFFECTS: finds the real time of the user
     static void getUserTime() {
@@ -197,7 +184,6 @@ public class CalenderView {
         currentMonth = userMonth; //Match month and year
         currentYear = userYear;
     }
-
     //EFFECTS: sets the buttons so that they can't go too far back or forward in time
     private static void allowButtons(int month, int year){
         prevMonth.setEnabled(true);
@@ -212,5 +198,4 @@ public class CalenderView {
         lblMonth.setBounds(320 - lblMonth.getPreferredSize().width / 2, 50, 360, 50);
         cmbYear.setSelectedItem(String.valueOf(year));
     }
-
 }
