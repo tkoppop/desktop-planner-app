@@ -1,11 +1,8 @@
 package ui;
-
 import javax.sound.sampled.*;
 import java.io.File;
-
 public class SoundEffect {
     Clip clip;
-
     //MODIFIES: clip
     //EFFECTS: sets the file that is going to be played
     public void setFile(String soundfile) {
@@ -18,7 +15,6 @@ public class SoundEffect {
             e.printStackTrace();
         }
     }
-
     //REQUIRES: clip != null
     //EFFECTS: plays selected clip
     public void play() {
