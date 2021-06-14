@@ -1,12 +1,9 @@
 package ui;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import static ui.TodoListGui.cal;
-
 //the UI form to add task to Calender
 public class AddTask extends JFrame {
     public static JPanel contentPane = new JPanel();
@@ -21,7 +18,6 @@ public class AddTask extends JFrame {
     public static JTextField yearInput;
     private static JTextField nameInput;
     public static JTextField urgencyInput;
-
     //EFFECTS: launches the add task GUI
     public static void addTasks() {
         try {
@@ -31,41 +27,31 @@ public class AddTask extends JFrame {
             e.printStackTrace();
         }
     }
-
     //EFFECTS: represents to Add Task GUI
     public AddTask() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(350, 150, 500, 450);
-
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(null);
         setContentPane(contentPane);
-
         getDate();
-
         JLabel lblName = new JLabel("Name");
         lblName.setBounds(64, 160, 46, 30);
         contentPane.add(lblName);
         nameInput = new JTextField();
         nameInput.setBounds(150, 160, 150, 30);
         contentPane.add(nameInput);
-
-
         JLabel lblUrgency = new JLabel("Urgency, 0 or 1");
         lblUrgency.setBounds(64, 200, 120, 30);
         contentPane.add(lblUrgency);
         urgencyInput = new JTextField();
         urgencyInput.setBounds(150, 200, 150, 30);
         contentPane.add(urgencyInput);
-
-
         JButton btnSubmit = new JButton("Submit");
         btnSubmit.setBounds(150, 250, 84, 30);
         contentPane.add(btnSubmit);
         btnSubmit.addActionListener(new SubmitTask());
-
     }
-
     //REQUIRES: submit task button is clicked
     //MODIFIES: calender
     //EFFECTS: adds a calender task to calender who's fields are put in.
@@ -91,25 +77,20 @@ public class AddTask extends JFrame {
             frame.setVisible(false);
         }
     }
-
     //EFFECTS: adds the date inputs into the GUI
     public static void getDate() {
-
         JLabel lblDay = new JLabel("Day");
         lblDay.setBounds(64, 29, 46, 30);
         contentPane.add(lblDay);
         dayInput = new JTextField();
         dayInput.setBounds(150, 29, 150, 30);
         contentPane.add(dayInput);
-
-
         JLabel lblMonth = new JLabel("Month");
         lblMonth.setBounds(64, 75, 46, 30);
         contentPane.add(lblMonth);
         monthInput = new JTextField();
         monthInput.setBounds(150, 75, 150, 30);
         contentPane.add(monthInput);
-
         JLabel lblYear = new JLabel("Year");
         lblYear.setBounds(64, 117, 46, 30);
         contentPane.add(lblYear);
@@ -117,7 +98,5 @@ public class AddTask extends JFrame {
         yearInput.setBounds(150, 117, 150, 30);
         contentPane.add(yearInput);
     }
-
-
 }
 
