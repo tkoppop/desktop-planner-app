@@ -1,19 +1,14 @@
 package persistence;
-
 import model.*;
 import org.junit.jupiter.api.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
-
 public class ReaderTest {
     CalenderTask ct;
     Calender cal;
-
     @Test
     void testConstructor(){
         new Reader();
@@ -33,7 +28,6 @@ public class ReaderTest {
             fail("IOException should not have been thrown");
         }
     }
-
     @Test
     void testParseCalenderFile2() {
         try {
@@ -48,7 +42,6 @@ public class ReaderTest {
             fail("IOException should not have been thrown");
         }
     }
-
     @Test
     void testIOException() {
         try {
