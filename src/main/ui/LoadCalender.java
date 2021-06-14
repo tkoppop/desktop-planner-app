@@ -1,15 +1,11 @@
 package ui;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-
 import static persistence.Reader.readCalenderTask;
 import static ui.TodoListGui.*;
-
 import static ui.ViewChooser.tempCal;
-
 //Loads in previous calender data
 public class LoadCalender implements ActionListener {
     //MODIFIES: cal
