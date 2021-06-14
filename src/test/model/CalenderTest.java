@@ -1,9 +1,6 @@
 package model;
-
 import org.junit.jupiter.api.*;
-
 public class CalenderTest {
-
     private Calender c;
     private CalenderTask ct1;
     private CalenderTask ct2;
@@ -16,8 +13,6 @@ public class CalenderTest {
     private CalenderTask ct9;
     private CalenderTask ct10;
     private CalenderTask ct11;
-
-
     @BeforeEach
     void runBefore() {
         c = new Calender();
@@ -33,7 +28,6 @@ public class CalenderTest {
         ct10 = new CalenderTask(1, "January", 2020, "Math", 0);
         ct11 = new CalenderTask(1, "January", 2020, "Jan", 0);
     }
-
     @Test
     void testConstructor() {
         assertEquals(0, c.getSize());
@@ -44,7 +38,6 @@ public class CalenderTest {
           //success
         }
     }
-
     @Test
     void testSingleTask() {
         c.addCalenderTask(ct1);
@@ -56,7 +49,6 @@ public class CalenderTest {
         }
         assertEquals(0, c.getSize());
     }
-
     @Test
     void testAddMultipleTask() {
         c.addCalenderTask(ct3);
@@ -77,9 +69,7 @@ public class CalenderTest {
         c.addCalenderTask(ct11);
         assertEquals("Not Urgent", ct2.toStringUrgency());
         assertEquals("Urgent", ct3.toStringUrgency());
-
     }
-
     @Test
     void testAddMultipleTaskNotFound() {
         c.addCalenderTask(ct3);
